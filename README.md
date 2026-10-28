@@ -18,7 +18,7 @@ The whole is managed by a Makefile allowing to build, launch and clean the infra
 
 
 ## Instructions
-
+```
 make
 make down
 make stop
@@ -26,7 +26,7 @@ make start
 make clean
 make fclean
 make re
-
+```
 ## Resources
 
 
