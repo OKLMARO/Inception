@@ -38,7 +38,7 @@ fi
 
 # --- Étape 3 : Attente que MariaDB accepte VRAIMENT wp_user ---
 echo ">>> Vérification de la connexion DB..."
-until wp db check --path="${WP_PATH}" --allow-root > /dev/null 2>&1; do
+until php -r "exit((new mysqli('mariadb', '${MYSQL_USER}', '${DB_PASSWORD}', '${MYSQL_DATABASE}'))->connect_errno ? 1 : 0);" 2>/dev/null; do
     echo "    ... DB pas encore prête pour wp_user, retry..."
     sleep 2
 done
