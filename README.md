@@ -15,3 +15,18 @@ MariaDB — database management system storing all site content.
 Each Docker image is built from a custom Dockerfile, based on a bookworm. Persistent data (site database and files) are kept in named Docker volumes, stored on the host machine in /home/login/data. Sensitive information (passwords, identifiers) is isolated from the rest of the code.
 
 The whole is managed by a Makefile allowing to build, launch and clean the infrastructure in one command.
+
+
+## Instructions
+
+make
+make down
+make stop
+make start
+make clean
+make fclean
+make re
+
+## Resources
+
+

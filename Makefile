@@ -6,9 +6,9 @@ up: prepare
 	$(COMPOSE) up -d --build
 
 prepare:
-	@mkdir -p /home/oamairi/data/mariadb
-	@mkdir -p /home/oamairi/data/wordpress
-	@echo "Data dirs ready under /home/oamairi/data"
+	@mkdir -p $(HOME)/data/mariadb
+	@mkdir -p $(HOME)/data/wordpress
+	@echo "Data dirs ready under $(HOME)/data"
 
 down:
 	$(COMPOSE) down
@@ -25,7 +25,7 @@ clean: down
 	docker system prune -af
 
 fclean: clean
-	@sudo rm -rf /home/oamairi/data
+	@sudo rm -fr $(HOME)/data
 	@echo "Volumes data wiped."
 
 .PHONY: all up prepare down stop start re clean fclean
