@@ -32,10 +32,44 @@ Si il est necessaire de le lancer a la main depuis la racine du projet : `docker
 
 ### Arrêter le projet
 
-`make down` 
+`make stop` 
 
-`make stop`
+### Arrêter le projet et vider les contenaires
 
-### Supprimer le projet et ses persistences
+`make clean`
+
+### Arrêter le projet et vider les contenaires et ses persistences
 
 `make fclean`
+
+## 3. Accéder au site et au panneau d'administration
+
+### Site public
+
+Ouvrir dans le navigateur : `https://oamairi.42.fr` (url definis dans le `srcs/.env`).
+
+Le certificat est auto-signé le message d'avertissement est donc legitime et normal.
+
+### Panneau d'administration
+
+Ouvrir dans le navigateur : `https://oamairi.42.fr/wp-admin`
+
+Le nom d'utilisateur definis dans le .env est `wproot` mais peut etre modifie lui aussi dans `src/.env` comme l'url.
+
+Le mot de passe est disponnible dans le dossier secrets.
+
+## 4. Les secrets
+
+Les mots de passes sont stockes dans le dossier `secrets`.
+
+|Fichier | Contenu|
+|-|-|
+|`secrets/db_root_password.txt` | Mot de passe root de MariaDB|
+|`secrets/db_password.txt`|Mot de passe de l'utilisateur WordPress dans MariaDB|
+|`secrets/credentials.txt`|Mots de passe des comptes WordPress (admin + author)|
+
+## 5. Vérifier que les services fonctionnent correctement
+
+### État des conteneurs
+
+Dans la racine du projet faire : `docker compose -f srcs/docker-compose.yml ps`. Et verifier que les trois services sont `UP` et seul nginx expose un port : `0.0.0.0:443->443/tcp`
