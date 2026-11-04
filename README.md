@@ -29,4 +29,21 @@ make re
 ```
 ## Resources
 
+```
+Video Tuto :
+https://www.youtube.com/watch?v=SXB6KJ4u5vg
+https://www.youtube.com/watch?v=cWkmqZPWwiw
+https://www.youtube.com/watch?v=dWcoIxRfs8Y
 
+Doc :
+https://www.ibm.com/docs/en/rpa/23.0.x?topic=environment-create-ssl-certificate
+https://mariadb.com/docs/server/clients-and-utilities/deployment-tools/mariadb-install-db
+https://mariadb.com/docs/server/clients-and-utilities/administrative-tools/mariadb-admin
+https://docs.openssl.org/master/man1/openssl-req/
+https://manpages.debian.org/experimental/gettext-base/envsubst.1.en.html
+https://developer.wordpress.org/cli/commands/core/download/
+https://developer.wordpress.org/cli/commands/config/create/
+https://developer.wordpress.org/cli/commands/core/is-installed/
+https://developer.wordpress.org/cli/commands/core/install/
+https://developer.wordpress.org/cli/commands/user/create/
+```
