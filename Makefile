@@ -15,7 +15,7 @@ prepare:
 
 re: fclean all
 
-clean: down
+clean:
 	$(COMPOSE) down
 
 fclean: clean
