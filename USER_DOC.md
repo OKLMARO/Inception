@@ -1,4 +1,4 @@
-# Inception — Documentation utilisateur
+# Inception — User Doc
 
 Ce document explique comment utiliser l'infrastructure Inception : quels services elle fournit, comment la démarrer, y accéder, gérer les identifiants et vérifier son bon fonctionnement.
 
