@@ -109,3 +109,28 @@ L’utilisateur doit également disposer des autorisations nécessaires pour ex�
 Le nom de domaine doit être configuré dans le fichier des hôtes locaux :
 
 127.0.0.1 login.42.fr
+
+## 8. Démarrer et arrêter le projet
+
+### Prérequis
+
+- Une machine avec Docker et Docker Compose installés.
+- L'utilisateur courant doit appartenir au groupe `docker` ou `sudo`.
+
+### Démarrer le projet
+
+Pour lancer le projet depuis la racine du projet : `make`.
+
+Si il est necessaire de le lancer a la main une quelconque commande depuis la racine du projet : `docker compose -f srcs/docker-compose.yml` (le -f sert a indiquer le chemin jusqu'au fichier `.yml`).
+
+### Arrêter le projet
+
+`make stop` 
+
+### Arrêter le projet et vider les contenaires
+
+`make clean`
+
+### Arrêter le projet et vider les contenaires et ses persistences
+
+`make fclean`
