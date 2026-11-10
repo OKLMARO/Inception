@@ -28,7 +28,7 @@ Les données (base de données et fichiers du site) sont persistantes : elles su
 
 Pour lancer le projet depuis la racine du projet : `make`.
 
-Si il est necessaire de le lancer a la main depuis la racine du projet : `docker compose -f srcs/docker-compose.yml` (le -f sert a indiquer le chemin jusqu'au fichier `.yml`).
+Si il est necessaire de le lancer a la main une quelconque commande depuis la racine du projet : `docker compose -f srcs/docker-compose.yml` (le -f sert a indiquer le chemin jusqu'au fichier `.yml`).
 
 ### Arrêter le projet
 
@@ -54,11 +54,13 @@ Le certificat est auto-signé le message d'avertissement est donc legitime et no
 
 Ouvrir dans le navigateur : `https://oamairi.42.fr/wp-admin`
 
-Le nom d'utilisateur definis dans le .env est `wproot` mais peut etre modifie lui aussi dans `src/.env` comme l'url.
+Le nom d'utilisateur definis dans le .env est `wproot` mais peut etre modifie lui aussi dans `srcs/.env` comme l'url.
 
 Le mot de passe est disponnible dans le dossier secrets.
 
-## 4. Les secrets
+## 4. Les secrets et identifiants
+
+Les identifiants se modifie dans le fichier .env.
 
 Les mots de passes sont stockes dans le dossier `secrets`.
 
