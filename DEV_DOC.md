@@ -95,3 +95,17 @@ Par ailleurs, un fichier `.dockerignore` est présent dans chaque service afin d
 |Nginx|Crée un certificat auto-signé au premier démarrage (SAN avec `${DOMAIN_NAME}`, pas de port). Si nginx.crt existe, ne régénère pas (le cert persiste dans l'image ou un volume). Remplace `${DOMAIN_NAME}` et `${PORT}` dans la conf → nginx ne les lit pas nativement. Valide la conf avant de lancer → crash propre si erreur. nginx en PID 1, mode foreground.|
 |Wordpress|Évite de démarrer avant que MariaDB soit joignable. Récupère les fichiers WP une seule fois (test wp-load.php). Génère wp-config.php avec les secrets → aucun mdp en clair. Attend que MariaDB accepte les identifiants. Installe ce qui n'est déjà fait. Creer les utilisateurs. Resynchronise les URLs à chaque démarrage (gère le changement de port). PHP-FPM en PID 1, mode foreground.|
 |MaraiDB|Récupère les mots de passe depuis `/run/secrets/`. Si la base existe déjà, on saute l'initialisation. Crée les tables système. Démarre MariaDB sans réseau pour créer la base et les users sans risque. MariaDB devient PID 1 → reçoit les signaux Docker directement.|
+
+## 7. Prérequis
+
+Avant de construire l’infrastructure, assurez-vous que les outils suivants sont installés :
+
+- Docker
+- Docker Compose
+- Make
+
+L’utilisateur doit également disposer des autorisations nécessaires pour exécuter les commandes Docker.
+
+Le nom de domaine doit être configuré dans le fichier des hôtes locaux :
+
+127.0.0.1 login.42.fr
